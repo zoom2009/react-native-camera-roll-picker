@@ -38,7 +38,7 @@ class ImageItem extends Component {
       item, selected, selectedMarker, imageMargin,
     } = this.props;
 
-    const marker = selectedMarker || (<Image
+    const Marker = selectedMarker || (<Image
       style={[styles.marker, { width: 25, height: 25 }]}
       source={checkIcon}
     />);
@@ -54,7 +54,7 @@ class ImageItem extends Component {
           source={{ uri: image.uri }}
           style={{ height: this.imageSize, width: this.imageSize }}
         />
-        {(selected) ? marker : null}
+        {(selected) ? <Marker uri={image.uri} /> : null}
       </TouchableOpacity>
     );
   }
